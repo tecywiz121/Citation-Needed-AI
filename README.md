@@ -11,6 +11,7 @@ There is a shell script test.sh which runs the server using the default
 one human versus five zombies. To use it:
 
 $ cd /path/to/repository/
+
 $ sh test.sh
 
 
