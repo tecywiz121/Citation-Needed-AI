@@ -1,0 +1,791 @@
+Generating random board of size 12 by 12 containing 5 zombies
+Placing entities on the board
+placing entity 0 on square 50
+placing entity 1 on square 83
+placing entity 2 on square 72
+placing entity 3 on square 101
+placing entity 4 on square 136
+placing entity 5 on square 44
+placing entity 6 on square 131
+placing entity 7 on square 9
+placing entity 8 on square 120
+placing entity 9 on square 117
+Initial board state:
+BEGIN BOARD
+Entity 0 [hp:2,ammo:30,team:0,melee:0.2,ranged:0.3]
+Entity 1 [hp:2,ammo:30,team:0,melee:0.2,ranged:0.3]
+Entity 2 [hp:2,ammo:30,team:0,melee:0.2,ranged:0.3]
+Entity 3 [hp:2,ammo:30,team:0,melee:0.2,ranged:0.3]
+Entity 4 [hp:2,ammo:30,team:0,melee:0.2,ranged:0.3]
+Entity 5 [hp:5,team:1,melee:0.5]
+Entity 6 [hp:5,team:1,melee:0.5]
+Entity 7 [hp:5,team:1,melee:0.5]
+Entity 8 [hp:5,team:1,melee:0.5]
+Entity 9 [hp:5,team:1,melee:0.5]
+Square 0 [occupant:-1,passable:True,blocklos:False,searched:False,x:0,y:0]
+Square 1 [occupant:-1,passable:False,blocklos:False,searched:False,x:1,y:0]
+Square 2 [occupant:-1,passable:True,blocklos:False,searched:False,x:2,y:0]
+Square 3 [occupant:-1,passable:True,blocklos:False,searched:False,x:3,y:0]
+Square 4 [occupant:-1,passable:True,blocklos:False,searched:False,x:4,y:0]
+Square 5 [occupant:-1,passable:True,blocklos:False,searched:False,x:5,y:0]
+Square 6 [occupant:-1,passable:True,blocklos:False,searched:False,x:6,y:0]
+Square 7 [occupant:-1,passable:True,blocklos:False,searched:False,x:7,y:0]
+Square 8 [occupant:-1,passable:False,blocklos:False,searched:False,x:8,y:0]
+Square 9 [occupant:7,passable:True,blocklos:False,searched:False,x:9,y:0]
+Square 10 [occupant:-1,passable:False,blocklos:False,searched:False,x:10,y:0]
+Square 11 [occupant:-1,passable:False,blocklos:False,searched:False,x:11,y:0]
+Square 12 [occupant:-1,passable:True,blocklos:False,searched:False,x:0,y:1]
+Square 13 [occupant:-1,passable:True,blocklos:False,searched:False,x:1,y:1]
+Square 14 [occupant:-1,passable:True,blocklos:False,searched:False,x:2,y:1]
+Square 15 [occupant:-1,passable:True,blocklos:False,searched:False,x:3,y:1]
+Square 16 [occupant:-1,passable:True,blocklos:False,searched:False,x:4,y:1]
+Square 17 [occupant:-1,passable:True,blocklos:False,searched:False,x:5,y:1]
+Square 18 [occupant:-1,passable:True,blocklos:False,searched:False,x:6,y:1]
+Square 19 [occupant:-1,passable:False,blocklos:True,searched:False,x:7,y:1]
+Square 20 [occupant:-1,passable:True,blocklos:False,searched:False,x:8,y:1]
+Square 21 [occupant:-1,passable:False,blocklos:False,searched:False,x:9,y:1]
+Square 22 [occupant:-1,passable:True,blocklos:False,searched:False,x:10,y:1]
+Square 23 [occupant:-1,passable:True,blocklos:False,searched:False,x:11,y:1]
+Square 24 [occupant:-1,passable:True,blocklos:False,searched:False,x:0,y:2]
+Square 25 [occupant:-1,passable:True,blocklos:False,searched:False,x:1,y:2]
+Square 26 [occupant:-1,passable:True,blocklos:False,searched:False,x:2,y:2]
+Square 27 [occupant:-1,passable:True,blocklos:True,searched:False,x:3,y:2]
+Square 28 [occupant:-1,passable:False,blocklos:False,searched:False,x:4,y:2]
+Square 29 [occupant:-1,passable:True,blocklos:False,searched:False,x:5,y:2]
+Square 30 [occupant:-1,passable:True,blocklos:True,searched:False,x:6,y:2]
+Square 31 [occupant:-1,passable:True,blocklos:False,searched:False,x:7,y:2]
+Square 32 [occupant:-1,passable:True,blocklos:False,searched:False,x:8,y:2]
+Square 33 [occupant:-1,passable:True,blocklos:False,searched:False,x:9,y:2]
+Square 34 [occupant:-1,passable:True,blocklos:False,searched:False,x:10,y:2]
+Square 35 [occupant:-1,passable:True,blocklos:False,searched:False,x:11,y:2]
+Square 36 [occupant:-1,passable:True,blocklos:False,searched:False,x:0,y:3]
+Square 37 [occupant:-1,passable:True,blocklos:False,searched:False,x:1,y:3]
+Square 38 [occupant:-1,passable:True,blocklos:False,searched:False,x:2,y:3]
+Square 39 [occupant:-1,passable:True,blocklos:False,searched:False,x:3,y:3]
+Square 40 [occupant:-1,passable:True,blocklos:False,searched:False,x:4,y:3]
+Square 41 [occupant:-1,passable:True,blocklos:False,searched:False,x:5,y:3]
+Square 42 [occupant:-1,passable:True,blocklos:False,searched:False,x:6,y:3]
+Square 43 [occupant:-1,passable:True,blocklos:False,searched:False,x:7,y:3]
+Square 44 [occupant:5,passable:True,blocklos:False,searched:False,x:8,y:3]
+Square 45 [occupant:-1,passable:True,blocklos:True,searched:False,x:9,y:3]
+Square 46 [occupant:-1,passable:True,blocklos:False,searched:False,x:10,y:3]
+Square 47 [occupant:-1,passable:True,blocklos:False,searched:False,x:11,y:3]
+Square 48 [occupant:-1,passable:True,blocklos:False,searched:False,x:0,y:4]
+Square 49 [occupant:-1,passable:True,blocklos:True,searched:False,x:1,y:4]
+Square 50 [occupant:0,passable:True,blocklos:False,searched:False,x:2,y:4]
+Square 51 [occupant:-1,passable:True,blocklos:True,searched:False,x:3,y:4]
+Square 52 [occupant:-1,passable:True,blocklos:True,searched:False,x:4,y:4]
+Square 53 [occupant:-1,passable:True,blocklos:False,searched:False,x:5,y:4]
+Square 54 [occupant:-1,passable:True,blocklos:True,searched:False,x:6,y:4]
+Square 55 [occupant:-1,passable:True,blocklos:False,searched:False,x:7,y:4]
+Square 56 [occupant:-1,passable:True,blocklos:False,searched:False,x:8,y:4]
+Square 57 [occupant:-1,passable:True,blocklos:False,searched:False,x:9,y:4]
+Square 58 [occupant:-1,passable:True,blocklos:False,searched:False,x:10,y:4]
+Square 59 [occupant:-1,passable:True,blocklos:False,searched:False,x:11,y:4]
+Square 60 [occupant:-1,passable:True,blocklos:False,searched:False,x:0,y:5]
+Square 61 [occupant:-1,passable:True,blocklos:False,searched:False,x:1,y:5]
+Square 62 [occupant:-1,passable:False,blocklos:False,searched:False,x:2,y:5]
+Square 63 [occupant:-1,passable:True,blocklos:False,searched:False,x:3,y:5]
+Square 64 [occupant:-1,passable:True,blocklos:False,searched:False,x:4,y:5]
+Square 65 [occupant:-1,passable:True,blocklos:False,searched:False,x:5,y:5]
+Square 66 [occupant:-1,passable:False,blocklos:True,searched:False,x:6,y:5]
+Square 67 [occupant:-1,passable:True,blocklos:False,searched:False,x:7,y:5]
+Square 68 [occupant:-1,passable:True,blocklos:False,searched:False,x:8,y:5]
+Square 69 [occupant:-1,passable:True,blocklos:False,searched:False,x:9,y:5]
+Square 70 [occupant:-1,passable:True,blocklos:False,searched:False,x:10,y:5]
+Square 71 [occupant:-1,passable:True,blocklos:True,searched:False,x:11,y:5]
+Square 72 [occupant:2,passable:True,blocklos:False,searched:False,x:0,y:6]
+Square 73 [occupant:-1,passable:True,blocklos:False,searched:False,x:1,y:6]
+Square 74 [occupant:-1,passable:True,blocklos:False,searched:False,x:2,y:6]
+Square 75 [occupant:-1,passable:True,blocklos:False,searched:False,x:3,y:6]
+Square 76 [occupant:-1,passable:True,blocklos:False,searched:False,x:4,y:6]
+Square 77 [occupant:-1,passable:True,blocklos:False,searched:False,x:5,y:6]
+Square 78 [occupant:-1,passable:True,blocklos:False,searched:False,x:6,y:6]
+Square 79 [occupant:-1,passable:True,blocklos:False,searched:False,x:7,y:6]
+Square 80 [occupant:-1,passable:True,blocklos:False,searched:False,x:8,y:6]
+Square 81 [occupant:-1,passable:True,blocklos:False,searched:False,x:9,y:6]
+Square 82 [occupant:-1,passable:True,blocklos:False,searched:False,x:10,y:6]
+Square 83 [occupant:1,passable:True,blocklos:False,searched:False,x:11,y:6]
+Square 84 [occupant:-1,passable:True,blocklos:False,searched:False,x:0,y:7]
+Square 85 [occupant:-1,passable:True,blocklos:False,searched:False,x:1,y:7]
+Square 86 [occupant:-1,passable:True,blocklos:False,searched:False,x:2,y:7]
+Square 87 [occupant:-1,passable:True,blocklos:False,searched:False,x:3,y:7]
+Square 88 [occupant:-1,passable:True,blocklos:False,searched:False,x:4,y:7]
+Square 89 [occupant:-1,passable:True,blocklos:False,searched:False,x:5,y:7]
+Square 90 [occupant:-1,passable:True,blocklos:False,searched:False,x:6,y:7]
+Square 91 [occupant:-1,passable:True,blocklos:False,searched:False,x:7,y:7]
+Square 92 [occupant:-1,passable:True,blocklos:False,searched:False,x:8,y:7]
+Square 93 [occupant:-1,passable:True,blocklos:False,searched:False,x:9,y:7]
+Square 94 [occupant:-1,passable:True,blocklos:False,searched:False,x:10,y:7]
+Square 95 [occupant:-1,passable:True,blocklos:False,searched:False,x:11,y:7]
+Square 96 [occupant:-1,passable:True,blocklos:False,searched:False,x:0,y:8]
+Square 97 [occupant:-1,passable:True,blocklos:True,searched:False,x:1,y:8]
+Square 98 [occupant:-1,passable:True,blocklos:False,searched:False,x:2,y:8]
+Square 99 [occupant:-1,passable:True,blocklos:False,searched:False,x:3,y:8]
+Square 100 [occupant:-1,passable:True,blocklos:False,searched:False,x:4,y:8]
+Square 101 [occupant:3,passable:True,blocklos:False,searched:False,x:5,y:8]
+Square 102 [occupant:-1,passable:True,blocklos:False,searched:False,x:6,y:8]
+Square 103 [occupant:-1,passable:True,blocklos:False,searched:False,x:7,y:8]
+Square 104 [occupant:-1,passable:True,blocklos:True,searched:False,x:8,y:8]
+Square 105 [occupant:-1,passable:True,blocklos:False,searched:False,x:9,y:8]
+Square 106 [occupant:-1,passable:True,blocklos:False,searched:False,x:10,y:8]
+Square 107 [occupant:-1,passable:True,blocklos:False,searched:False,x:11,y:8]
+Square 108 [occupant:-1,passable:False,blocklos:False,searched:False,x:0,y:9]
+Square 109 [occupant:-1,passable:True,blocklos:False,searched:False,x:1,y:9]
+Square 110 [occupant:-1,passable:True,blocklos:False,searched:False,x:2,y:9]
+Square 111 [occupant:-1,passable:True,blocklos:False,searched:False,x:3,y:9]
+Square 112 [occupant:-1,passable:True,blocklos:False,searched:False,x:4,y:9]
+Square 113 [occupant:-1,passable:True,blocklos:False,searched:False,x:5,y:9]
+Square 114 [occupant:-1,passable:True,blocklos:False,searched:False,x:6,y:9]
+Square 115 [occupant:-1,passable:True,blocklos:False,searched:False,x:7,y:9]
+Square 116 [occupant:-1,passable:True,blocklos:False,searched:False,x:8,y:9]
+Square 117 [occupant:9,passable:True,blocklos:False,searched:False,x:9,y:9]
+Square 118 [occupant:-1,passable:True,blocklos:True,searched:False,x:10,y:9]
+Square 119 [occupant:-1,passable:True,blocklos:False,searched:False,x:11,y:9]
+Square 120 [occupant:8,passable:True,blocklos:False,searched:False,x:0,y:10]
+Square 121 [occupant:-1,passable:True,blocklos:False,searched:False,x:1,y:10]
+Square 122 [occupant:-1,passable:True,blocklos:False,searched:False,x:2,y:10]
+Square 123 [occupant:-1,passable:True,blocklos:False,searched:False,x:3,y:10]
+Square 124 [occupant:-1,passable:True,blocklos:False,searched:False,x:4,y:10]
+Square 125 [occupant:-1,passable:True,blocklos:False,searched:False,x:5,y:10]
+Square 126 [occupant:-1,passable:True,blocklos:False,searched:False,x:6,y:10]
+Square 127 [occupant:-1,passable:True,blocklos:False,searched:False,x:7,y:10]
+Square 128 [occupant:-1,passable:True,blocklos:False,searched:False,x:8,y:10]
+Square 129 [occupant:-1,passable:True,blocklos:True,searched:False,x:9,y:10]
+Square 130 [occupant:-1,passable:True,blocklos:False,searched:False,x:10,y:10]
+Square 131 [occupant:6,passable:True,blocklos:True,searched:False,x:11,y:10]
+Square 132 [occupant:-1,passable:True,blocklos:False,searched:False,x:0,y:11]
+Square 133 [occupant:-1,passable:True,blocklos:False,searched:False,x:1,y:11]
+Square 134 [occupant:-1,passable:True,blocklos:False,searched:False,x:2,y:11]
+Square 135 [occupant:-1,passable:True,blocklos:False,searched:False,x:3,y:11]
+Square 136 [occupant:4,passable:True,blocklos:False,searched:False,x:4,y:11]
+Square 137 [occupant:-1,passable:True,blocklos:False,searched:False,x:5,y:11]
+Square 138 [occupant:-1,passable:True,blocklos:False,searched:False,x:6,y:11]
+Square 139 [occupant:-1,passable:False,blocklos:False,searched:False,x:7,y:11]
+Square 140 [occupant:-1,passable:True,blocklos:False,searched:False,x:8,y:11]
+Square 141 [occupant:-1,passable:False,blocklos:False,searched:False,x:9,y:11]
+Square 142 [occupant:-1,passable:True,blocklos:False,searched:False,x:10,y:11]
+Square 143 [occupant:-1,passable:True,blocklos:False,searched:False,x:11,y:11]
+END BOARD
+
+
+=== START OF TURN 1 ===
+. x . . . . . . x Z x x
+. . . . . . . X . x . .
+. . . + x . + . . . . .
+. . . . . . . . Z + . .
+. + H + + . + . . . . .
+. . x . . . X . . . . +
+H . . . . . . . . . . H
+. . . . . . . . . . . .
+. + . . . H . . + . . .
+x . . . . . . . . Z + .
+Z . . . . . . . . + . Z
+. . . . H . . x . x . .
+Starting Child Process ../python/main.py
+PID: 9988
+Writing initial state to child process
+Starting Game
+[debug] Starting player AI turn
+[debug] Player turn finished
+[info] Recieved end of turn signal from client
+* Entity 4 moved West
+* Entity 3 did not find anything of value
+* Entity 1 moved North
+[info] Taking Zombie Turns
+[info] Entity 6 smells living flesh
+* Entity 6 moved North
+[info] Entity 9 smells living flesh
+* Entity 9 moved West
+[info] Entity 5 staggers randomly
+* Entity 5 moved West
+[info] Entity 7 staggers randomly
+[info] Entity 8 smells living flesh
+* Entity 8 moved East
+[info] Zombie Turns Over
+
+
+=== START OF TURN 2 ===
+. x . . . . . . x Z x x
+. . . . . . . X . x . .
+. . . + x . + . . . . .
+. . . . . . . Z . + . .
+. + H + + . + . . . . .
+. . x . . . X . . . . H
+H . . . . . . . . . . .
+. . . . . . . . . . . .
+. + . . . H . . + . . .
+x . . . . . . . Z . + Z
+. Z . . . . . . . + . +
+. . . H . . . x . x . .
+[debug] Starting player AI turn
+[debug] Player turn finished
+[info] Recieved end of turn signal from client
+* Entity 4 moved East
+* Entity 3 moved North
+* Entity 3 hit entity 9 (ranged)
+* Entity 2 moved East
+* Entity 2 did not find anything of value
+* Entity 1 moved West
+* Entity 0 moved North
+[info] Taking Zombie Turns
+[info] Entity 5 smells living flesh
+* Entity 5 moved West
+[info] Entity 9 smells living flesh
+* Entity 9 moved West
+[info] Entity 6 smells living flesh
+* Entity 6 moved North
+[info] Entity 7 staggers randomly
+[info] Entity 8 smells living flesh
+* Entity 8 moved East
+[info] Zombie Turns Over
+
+
+=== START OF TURN 3 ===
+. x . . . . . . x Z x x
+. . . . . . . X . x . .
+. . . + x . + . . . . .
+. . H . . . Z . . + . .
+. + . + + . + . . . . .
+. . x . . . X . . . H +
+, H . . . . . . . . . .
+. . . . . H . . . . . .
+. + . . . , . . + . . Z
+x . . . . . . Z . . + .
+. . Z . . . . . . + . +
+. . . . H . . x . x . .
+[debug] Starting player AI turn
+[debug] Player turn finished
+[info] Recieved end of turn signal from client
+* Entity 4 found 7 bullets
+* Entity 4 moved North
+* Entity 3 moved West
+* Entity 3 missed entity 9 (ranged)
+* Entity 2 moved West
+* Entity 2 found 10 bullets
+* Entity 1 did not find anything of value
+* Entity 0 moved North
+[info] Taking Zombie Turns
+[info] Entity 9 smells living flesh
+* Entity 9 moved West
+[info] Entity 5 smells living flesh
+* Entity 5 moved West
+[info] Entity 6 smells living flesh
+* Entity 6 moved North
+[info] Entity 8 smells living flesh
+* Entity 8 moved East
+[info] Entity 7 staggers randomly
+[info] Zombie Turns Over
+
+
+=== START OF TURN 4 ===
+. x . . . . . . x Z x x
+. . . . . . . X . x . .
+. . H + x . + . . . . .
+. . . . . Z . . . + . .
+. + . + + . + . . . . .
+. . x . . . X . . . H +
+H , . . . . . . . . . .
+. . . . H . . . . . . Z
+. + . . . , . . + . . .
+x . . . . . Z . . . + .
+. . . Z H . . . . + . +
+. . . . , . . x . x . .
+[debug] Starting player AI turn
+[debug] Player turn finished
+[info] Recieved end of turn signal from client
+* Entity 4 moved South
+* Entity 4 did not find anything of value
+* Entity 2 moved South
+* Entity 2 hit entity 9 (ranged)
+* Entity 1 moved West
+* Entity 1 moved West
+* Entity 0 did not find anything of value
+* Entity 0 missed entity 9 (ranged)
+[info] Taking Zombie Turns
+[info] Entity 6 smells living flesh
+* Entity 6 moved West
+[info] Entity 8 smells living flesh
+* Entity 8 hit entity 4 (melee)
+[info] Entity 9 smells living flesh
+* Entity 9 moved West
+[info] Entity 7 smells living flesh
+[info] Entity 5 smells living flesh
+* Entity 5 moved West
+[info] Zombie Turns Over
+
+
+=== START OF TURN 5 ===
+. x . . . . . . x Z x x
+. . . . . . . X . x . .
+. . H + x . + . . . . .
+. . . . Z . . . . + . .
+. + . + + . + . . . . .
+. . x . . . X . H . , +
+, , . . . . . . . . . .
+H . . . H . . . . . Z .
+. + . . . , . . + . . .
+x . . . . Z . . . . + .
+. . . Z , . . . . + . +
+. . . . H . . x . x . .
+[debug] Starting player AI turn
+[debug] Player turn finished
+[info] Recieved end of turn signal from client
+* Entity 2 moved East
+* Entity 2 hit entity 9 (ranged)
+* Entity 1 did not find anything of value
+* Entity 1 moved West
+* Entity 0 missed entity 9 (ranged)
+[info] Taking Zombie Turns
+[info] Entity 8 smells living flesh
+* Entity 8 killed entity 4 (melee)
+[info] Entity 5 smells living flesh
+* Entity 5 moved West
+[info] Entity 9 smells living flesh
+* Entity 9 moved North
+[info] Entity 6 smells living flesh
+* Entity 6 moved West
+[info] Entity 7 smells living flesh
+[info] Zombie Turns Over
+
+
+=== START OF TURN 6 ===
+. x . . . . . . x Z x x
+. . . . . . . X . x . .
+. . H + x . + . . . . .
+. . . Z . . . . . + . .
+. + . + + . + . . . . .
+. . x . . . X H , . , +
+, , . . . . . . . . . .
+. H . . H . . . . Z . .
+. + . . . Z . . + . . .
+x . . . . . . . . . + .
+. . . Z , . . . . + . +
+. . . . , . . x . x . .
+[debug] Starting player AI turn
+[debug] Player turn finished
+[info] Recieved end of turn signal from client
+* Entity 3 did not find anything of value
+* Entity 3 hit entity 9 (melee)
+* Entity 2 missed entity 9 (ranged)
+* Entity 2 did not find anything of value
+* Entity 1 found a pizza pop (+1 HP)
+[cheat] Entity 1 cannot search; square is already looted
+[info] Taking Zombie Turns
+[info] Entity 8 smells living flesh
+* Entity 8 moved North
+[info] Entity 7 smells living flesh
+[info] Entity 6 smells living flesh
+* Entity 6 moved North
+[info] Entity 5 smells living flesh
+* Entity 5 missed entity 0 (melee)
+[info] Entity 9 smells living flesh
+* Entity 9 missed entity 3 (melee)
+[info] Zombie Turns Over
+
+
+=== START OF TURN 7 ===
+. x . . . . . . x Z x x
+. . . . . . . X . x . .
+. . H + x . + . . . . .
+. . . Z . . . . . + . .
+. + . + + . + . . . . .
+. . x . . . X H , . , +
+, , . . . . . . . Z . .
+. H . . H . . . . . . .
+. + . . . Z . . + . . .
+x . . Z . . . . . . + .
+. . . . , . . . . + . +
+. . . . , . . x . x . .
+[debug] Starting player AI turn
+[debug] Player turn finished
+[info] Recieved end of turn signal from client
+* Entity 3 missed entity 9 (melee)
+* Entity 3 moved East
+* Entity 2 moved East
+* Entity 0 killed entity 9 (ranged)
+* Entity 0 moved East
+[info] Taking Zombie Turns
+[info] Entity 8 smells living flesh
+* Entity 8 moved North
+[info] Entity 5 smells living flesh
+* Entity 5 missed entity 0 (melee)
+[info] Entity 7 smells living flesh
+[info] Entity 6 smells living flesh
+* Entity 6 moved West
+[info] Zombie Turns Over
+
+
+=== START OF TURN 8 ===
+. x . . . . . . x Z x x
+. . . . . . . X . x . .
+. . , H x . + . . . . .
+. . . Z . . . . . + . .
+. + . + + . + . . . . .
+. . x . . . X H , . , +
+, , . . . . . . Z . . .
+. , H . , H . . . . . .
+. + . Z . , . . + . . .
+x . . . . . . . . . + .
+. . . . , . . . . + . +
+. . . . , . . x . x . .
+[debug] Starting player AI turn
+[debug] Player turn finished
+[info] Recieved end of turn signal from client
+* Entity 3 did not find anything of value
+[cheat] Entity 3 cannot search; square is already looted
+* Entity 2 moved South
+* Entity 0 moved North
+[info] Taking Zombie Turns
+[info] Entity 7 smells living flesh
+[info] Entity 8 smells living flesh
+* Entity 8 missed entity 2 (melee)
+[info] Entity 5 smells living flesh
+* Entity 5 moved North
+[info] Entity 6 smells living flesh
+* Entity 6 missed entity 1 (melee)
+[info] Zombie Turns Over
+
+
+=== START OF TURN 9 ===
+. x . . . . . . x Z x x
+. . . H . . . X . x . .
+. . , Z x . + . . . . .
+. . . . . . . . . + . .
+. + . + + . + . . . . .
+. . x . . . X H , . , +
+, , . . . . . . Z . . .
+. , . . , H . . . . . .
+. + H Z . , . . + . . .
+x . . . . . . . . . + .
+. . . . , . . . . + . +
+. . . . , . . x . x . .
+[debug] Starting player AI turn
+[debug] Player turn finished
+[info] Recieved end of turn signal from client
+* Entity 3 moved South
+* Entity 2 found a katana (+10.0% chance to do melee damage)
+[debug] Entity 1 cannot move in direction West (impassible)
+[info] Taking Zombie Turns
+[info] Entity 7 smells living flesh
+[info] Entity 5 smells living flesh
+* Entity 5 hit entity 0 (melee)
+[info] Entity 6 smells living flesh
+* Entity 6 missed entity 1 (melee)
+[info] Entity 8 smells living flesh
+* Entity 8 missed entity 2 (melee)
+[info] Zombie Turns Over
+
+
+=== START OF TURN 10 ===
+. x . . . . . . x Z x x
+. . . H . . . X . x . .
+. . , Z x . + . . . . .
+. . . . . . . . . + . .
+. + . + + . + . . . . .
+. . x . . . X H , . , +
+, , . . . . . . Z . . .
+. , . . , , . . . . . .
+. + H Z . H . . + . . .
+x . . . . . . . . . + .
+. . . . , . . . . + . +
+. . . . , . . x . x . .
+[debug] Starting player AI turn
+[debug] Player turn finished
+[info] Recieved end of turn signal from client
+* Entity 3 moved North
+[debug] Entity 1 cannot shoot; empty target square
+* Entity 0 found a twinkie (+1 HP)
+[cheat] Entity 0 cannot search; square is already looted
+[info] Taking Zombie Turns
+[info] Entity 7 smells living flesh
+[info] Entity 6 smells living flesh
+* Entity 6 hit entity 1 (melee)
+[info] Entity 8 smells living flesh
+* Entity 8 hit entity 2 (melee)
+[info] Entity 5 smells living flesh
+* Entity 5 missed entity 0 (melee)
+[info] Zombie Turns Over
+
+
+=== START OF TURN 11 ===
+. x . . . . . . x Z x x
+. . . H . . . X . x . .
+. . , Z x . + . . . . .
+. . . . . . . . . + . .
+. + . + + . + . . . . .
+. . x . . . X H , . , +
+, , . . . . . . Z . . .
+. , . . , H . . . . . .
+. + H Z . , . . + . . .
+x . . . . . . . . . + .
+. . . . , . . . . + . +
+. . . . , . . x . x . .
+[debug] Starting player AI turn
+[debug] Player turn finished
+[info] Recieved end of turn signal from client
+* Entity 3 moved East
+* Entity 2 moved North
+* Entity 2 moved West
+[info] Taking Zombie Turns
+[info] Entity 7 smells living flesh
+[info] Entity 8 smells living flesh
+* Entity 8 moved West
+[info] Entity 5 smells living flesh
+* Entity 5 hit entity 0 (melee)
+[info] Entity 6 smells living flesh
+* Entity 6 missed entity 1 (melee)
+[info] Zombie Turns Over
+
+
+=== START OF TURN 12 ===
+. x . . . . . . x Z x x
+. . . H . . . X . x . .
+. . , Z x . + . . . . .
+. . . . . . . . . + . .
+. + . + + . + . . . . .
+. . x . . . X H , . , +
+, , . . . . . . Z . . .
+. H . . , , H . . . . .
+. + Z . . , . . + . . .
+x . . . . . . . . . + .
+. . . . , . . . . + . +
+. . . . , . . x . x . .
+[debug] Starting player AI turn
+[debug] Player turn finished
+[info] Recieved end of turn signal from client
+* Entity 3 did not find anything of value
+[cheat] Entity 3 cannot search; square is already looted
+* Entity 2 moved North
+* Entity 1 moved East
+[info] Taking Zombie Turns
+[info] Entity 7 smells living flesh
+[info] Entity 5 smells living flesh
+* Entity 5 killed entity 0 (melee)
+[info] Entity 8 smells living flesh
+* Entity 8 moved North
+[info] Entity 6 smells living flesh
+* Entity 6 hit entity 1 (melee)
+[info] Zombie Turns Over
+
+
+=== START OF TURN 13 ===
+. x . . . . . . x Z x x
+. . . , . . . X . x . .
+. . , Z x . + . . . . .
+. . . . . . . . . + . .
+. + . + + . + . . . . .
+. . x . . . X , H . , +
+, H . . . . . . Z . . .
+. , Z . , , H . . . . .
+. + , . . , . . + . . .
+x . . . . . . . . . + .
+. . . . , . . . . + . +
+. . . . , . . x . x . .
+[debug] Starting player AI turn
+[info] Recieved end of turn signal from client
+[info] Taking Zombie Turns
+[info] Entity 5 staggers randomly
+* Entity 5 moved West
+[info] Entity 8 smells living flesh
+* Entity 8 missed entity 2 (melee)
+[info] Entity 7 smells living flesh
+[info] Entity 6 smells living flesh
+* Entity 6 missed entity 1 (melee)
+[info] Zombie Turns Over
+
+
+=== START OF TURN 14 ===
+. x . . . . . . x Z x x
+. . . , . . . X . x . .
+. . Z + x . + . . . . .
+. . . . . . . . . + . .
+. + . + + . + . . . . .
+. . x . . . X , H . , +
+, H . . . . . . Z . . .
+. , Z . , , H . . . . .
+. + , . . , . . + . . .
+x . . . . . . . . . + .
+. . . . , . . . . + . +
+. . . . , . . x . x . .
+[debug] Player turn finished
+[debug] Starting player AI turn
+[debug] Player turn finished
+[info] Recieved end of turn signal from client
+* Entity 3 moved North
+[info] Taking Zombie Turns
+[info] Entity 6 smells living flesh
+* Entity 6 missed entity 1 (melee)
+[info] Entity 8 smells living flesh
+* Entity 8 killed entity 2 (melee)
+[info] Entity 7 smells living flesh
+[info] Entity 5 staggers randomly
+* Entity 5 moved North
+[info] Zombie Turns Over
+
+
+=== START OF TURN 15 ===
+. x . . . . . . x Z x x
+. . Z , . . . X . x . .
+. . , + x . + . . . . .
+. . . . . . . . . + . .
+. + . + + . + . . . . .
+. . x . . . X , H . , +
+, , . . . . H . Z . . .
+. , Z . , , , . . . . .
+. + , . . , . . + . . .
+x . . . . . . . . . + .
+. . . . , . . . . + . +
+. . . . , . . x . x . .
+[debug] Starting player AI turn
+[debug] Player turn finished
+[info] Recieved end of turn signal from client
+[debug] Entity 3 cannot move in direction North (impassible)
+[info] Taking Zombie Turns
+[info] Entity 8 smells living flesh
+* Entity 8 moved East
+[info] Entity 5 staggers randomly
+* Entity 5 moved North
+[info] Entity 6 smells living flesh
+* Entity 6 missed entity 1 (melee)
+[info] Entity 7 smells living flesh
+[info] Zombie Turns Over
+
+
+=== START OF TURN 16 ===
+. x Z . . . . . x Z x x
+. . . , . . . X . x . .
+. . , + x . + . . . . .
+. . . . . . . . . + . .
+. + . + + . + . . . . .
+. . x . . . X , H . , +
+, , . . . . H . Z . . .
+. , . Z , , , . . . . .
+. + , . . , . . + . . .
+x . . . . . . . . . + .
+. . . . , . . . . + . +
+. . . . , . . x . x . .
+[debug] Starting player AI turn
+[debug] Player turn finished
+[info] Recieved end of turn signal from client
+* Entity 1 moved East
+[info] Taking Zombie Turns
+[info] Entity 7 smells living flesh
+[info] Entity 5 staggers randomly
+* Entity 5 moved South
+[info] Entity 8 smells living flesh
+* Entity 8 moved East
+[info] Entity 6 smells living flesh
+* Entity 6 missed entity 1 (melee)
+[info] Zombie Turns Over
+
+
+=== START OF TURN 17 ===
+. x . . . . . . x Z x x
+. . Z , . . . X . x . .
+. . , + x . + . . . . .
+. . . . . . . . . + . .
+. + . + + . + . . . . .
+. . x . . . X , , H , +
+, , . . . . H . Z . . .
+. , . . Z , , . . . . .
+. + , . . , . . + . . .
+x . . . . . . . . . + .
+. . . . , . . . . + . +
+. . . . , . . x . x . .
+[debug] Starting player AI turn
+[info] Recieved end of turn signal from client
+[info] Taking Zombie Turns
+[info] Entity 8 smells living flesh
+* Entity 8 moved East
+[info] Entity 6 smells living flesh
+* Entity 6 killed entity 1 (melee)
+[info] Entity 5 staggers randomly
+* Entity 5 moved North
+[info] Entity 7 staggers randomly
+[info] Zombie Turns Over
+
+
+=== START OF TURN 18 ===
+. x Z . . . . . x Z x x
+. . . , . . . X . x . .
+. . , + x . + . . . . .
+. . . . . . . . . + . .
+. + . + + . + . . . . .
+. . x . . . X , , . , +
+, , . . . . H . Z . . .
+. , . . , Z , . . . . .
+. + , . . , . . + . . .
+x . . . . . . . . . + .
+. . . . , . . . . + . +
+. . . . , . . x . x . .
+[debug] Player turn finished
+[debug] Starting player AI turn
+[debug] Player turn finished
+[info] Recieved end of turn signal from client
+* Entity 3 did not find anything of value
+[info] Taking Zombie Turns
+[info] Entity 8 smells living flesh
+* Entity 8 hit entity 3 (melee)
+[info] Entity 5 staggers randomly
+* Entity 5 moved East
+[info] Entity 7 staggers randomly
+[info] Entity 6 smells living flesh
+* Entity 6 moved West
+[info] Zombie Turns Over
+
+
+=== START OF TURN 19 ===
+. x . Z . . . . x Z x x
+. . . , . . . X . x . .
+. . , + x . + . . . . .
+. . . . . . . . . + . .
+. + . + + . + . . . . .
+. . x . . . X , , . , +
+, , . . . . H Z . . . .
+. , . . , Z , . . . . .
+. + , . . , . . + . . .
+x . . . . . . . . . + .
+. . . . , . . . . + . +
+. . . . , . . x . x . .
+[debug] Starting player AI turn
+[info] Recieved end of turn signal from client
+[info] Taking Zombie Turns
+[info] Entity 6 smells living flesh
+* Entity 6 missed entity 3 (melee)
+[info] Entity 7 staggers randomly
+[info] Entity 5 staggers randomly
+* Entity 5 moved South
+[info] Entity 8 smells living flesh
+* Entity 8 missed entity 3 (melee)
+[info] Zombie Turns Over
+
+
+=== START OF TURN 20 ===
+. x . . . . . . x Z x x
+. . . Z . . . X . x . .
+. . , + x . + . . . . .
+. . . . . . . . . + . .
+. + . + + . + . . . . .
+. . x . . . X , , . , +
+, , . . . . H Z . . . .
+. , . . , Z , . . . . .
+. + , . . , . . + . . .
+x . . . . . . . . . + .
+. . . . , . . . . + . +
+. . . . , . . x . x . .
+[debug] Player turn finished
+[debug] Starting player AI turn
+[info] Recieved end of turn signal from client
+[info] Taking Zombie Turns
+[info] Entity 6 smells living flesh
+* Entity 6 killed entity 3 (melee)
+[info] Entity 7 staggers randomly
+[info] Entity 5 staggers randomly
+* Entity 5 moved West
+[info] Entity 8 staggers randomly
+* Entity 8 moved West
+[info] Zombie Turns Over
+* All humans are dead! Player loss
+* Player AI lasted 20 turns
+GAME OVER
