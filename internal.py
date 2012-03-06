@@ -2,40 +2,75 @@ from copy import deepcopy
 import random
 
 def max_worse(self, other):
+    '''
+    Returns True if self is worse than other for a maximizing player
+    '''
     if not self:
         return True
     return self.value < other.value or (self.value == other.value and self.max_depth > other.max_depth)
     
 
 def min_worse(self, other):
+    '''
+    Returns True if self is worse than other for a minimizing player
+    '''
     if not self:
         return True
     return self.value > other.value or (self.value == other.value and self.max_depth > other.max_depth)
 
 class Minimax(object):
+    '''
+    Generic implementation of the minimax algorithm
+    '''
     def itermoves(self):
+        '''
+        Returns an iterator of all possible moves for the current game state
+        '''
         pass
     
     def is_won(self):
+        '''
+        Returns True if the current game state has been won
+        '''
         pass
     
     def is_max(self):
+        '''
+        Returns True if the turn at the current game state should maximize.
+        Maximizing players are usually the AI controlled ones
+        '''
         pass
 
     def evaluate(self):
+        '''
+        Sets self.value to the value of the current game state
+        '''
         self.value = 0
         return self
     
     def worse_func(self):
+        '''
+        Returns the correct worse function depending on if this game state is
+        for a maximizing or a minimizing player
+        '''
         return max_worse if self.is_max() else min_worse
     
     def longer(self, other):
+        '''
+        Returns True if the self has a greater maximum depth than other
+        '''
         return not other or self.max_depth >= other.max_depth
     
     def shorter(self, other):
+        '''
+        Returns True if self has a shorter maximum depth than other
+        '''
         return not other or self.max_depth < other.max_depth
     
     def minimax(self, depth=0):
+        '''
+        Runs the minimax algorithm on the current game state
+        '''
         if self.is_won() or depth > 3:
             self.max_depth = depth
             return self.evaluate()
@@ -53,12 +88,6 @@ class Minimax(object):
             #print depth, 'Possible move:', move.action, move.value if hasattr(move, 'value') else '-'
             board = move.minimax(depth)
             if worse_than(bestBoard, board):
-                #
-                s = 'New move is: ' + str(move.action) + ' ' + str(move.value)
-                if bestBoard:
-                    s += '  ( Old move was: ' + str(bestBoard.action)+')'
-                #print depth, s
-                #
                 bestBoard = move
             #else:
             #    print depth, 'Not replacing', 'None' if not bestBoard else str(bestBoard.action) + str(bestBoard.value), 'with', board.action, board.value
@@ -73,6 +102,10 @@ class Minimax(object):
         return bestBoard
 
 class Zombie:
+    '''
+    Represents a zombie player on the simulated game board.  Also is the base
+    class for Humans
+    '''
     HUMAN = 0
     ZOMBIE = 1
     TYPE = ZOMBIE
@@ -83,6 +116,9 @@ class Zombie:
     BULLETS = 0
     
     def __init__(self, x, y):
+        '''
+        Creates an instance of a Zombie at position (x, y)
+        '''
         self.type = self.TYPE
         self.ranged_attack = self.RANGED
         self.melee_attack = self.MELEE
@@ -92,11 +128,15 @@ class Zombie:
         self.y = y
 
 class Human(Zombie):
+    '''
+    Represents a human player on the simulated game board.
+    '''
     TYPE = Zombie.HUMAN
     HEALTH = 2.0
     RANGED = 0.5
     BULLETS = 30
 
+# Offsets for valid Zombie/Player moves
 MOVES = (
     (-1, 0),
     (0, -1),
@@ -104,6 +144,7 @@ MOVES = (
     (0, 1),
 )
 
+# Offsets for all adjacent squares
 ADJACENT = MOVES + (
     (-1, -1),
     (-1, 1),
@@ -112,7 +153,13 @@ ADJACENT = MOVES + (
 )
 
 class Field:
+    '''
+    Stores the state of the map including passability, opacity, and search status
+    '''
     def __init__(self, width, height):
+        '''
+        Creates a new instance of Field with the given width and height
+        '''
         self.width = width
         self.height = height
         
@@ -122,6 +169,10 @@ class Field:
         self.unseeable = {}
     
     def clone(self):
+        '''
+        Returns a copy of self.  Keeps the same references for immutable fields
+        like the map, and creates new copies for mutable fields like searched
+        '''
         new = self.__class__(self.width, self.height)
         
         # Searched can be modified, so copy it
@@ -133,18 +184,34 @@ class Field:
         return new
     
     def passable(self, x, y):
+        '''
+        Returns True if the square at (x, y) is passable
+        '''
         return (y, x) not in self.unpassable
     
     def searchable(self, x, y):
+        '''
+        Returns True if the square at (x, y) is searchable
+        '''
         return (y, x) not in self.searched
     
     def search(self, x, y):
+        '''
+        Marks a square at (x, y) as having been searched
+        '''
         self.searched[(y, x)] = True
     
     def transparent(self, x, y):
+        '''
+        Returns True if the square at (x, y) is see-through
+        '''
         return (y, x) not in self.unseeable
     
     def can_see(self, source, target):
+        '''
+        Returns True if the square source has line of sight to the square at
+        target.
+        '''
         dx = target.x - source.x
         dy = target.y - source.y
         
@@ -173,6 +240,9 @@ class Field:
         
     
     def ascii(self):
+        '''
+        Produces a pretty ascii string representation of the field
+        '''
         output = []
         for y in range(0, self.height):
             line = []
@@ -201,9 +271,15 @@ class Field:
         return '\n'.join([' '.join(line) for line in self.ascii()])
 
 class AmmoError(Exception):
+    '''
+    Thrown if a shoot command is given when a Human has no ammo
+    '''
     pass
 
 class ZombieBoard(Minimax):
+    '''
+    Implements the logic specific to the Zombie game
+    '''
     def __init__(self, field):
         self.zombies = []
         self.humans = []
@@ -212,6 +288,10 @@ class ZombieBoard(Minimax):
         self.n_turn = 0
     
     def add_zombie(self, x, y, health=Zombie.HEALTH, melee=Zombie.MELEE):
+        '''
+        Add a Zombie to the board at (x, y) with the given health and melee
+        attack chance
+        '''
         if not self.bounds(x, y):
             raise Exception('Invalid position')
         zombie = Zombie(x, y)
@@ -221,6 +301,11 @@ class ZombieBoard(Minimax):
         self.entities[(x, y)] = zombie
     
     def add_human(self, x, y, health=Human.HEALTH, bullets=Human.BULLETS, melee=Human.MELEE, ranged=Human.RANGED, id=0):
+        '''
+        Adds a human to the board at (x, y) with the given health, bullets, and
+        given melee and ranged attack chance.  id is an optional argument to
+        link the human to a human in the CS Games server.
+        '''
         if not self.bounds(x, y):
             raise Exception('Invalid position')
         human = Human(x, y)
@@ -233,7 +318,9 @@ class ZombieBoard(Minimax):
         self.entities[(x, y)] = human
     
     def clone(self):
-        #print 'cloning'
+        '''
+        Create a copy of the current game state
+        '''
         new = self.__class__(self.field)
         new.zombies = deepcopy(self.zombies)
         new.humans = deepcopy(self.humans)
@@ -242,6 +329,9 @@ class ZombieBoard(Minimax):
         return new
     
     def turn(self):
+        '''
+        Create a copy of the current game state and advance the turn counter
+        '''
         new = self.clone()
         new.n_turn += 1
         if new.n_turn > len(new.humans)*2:
@@ -249,15 +339,27 @@ class ZombieBoard(Minimax):
         return new
 
     def human(self):
+        '''
+        If this game state represents a max turn, return the current human
+        '''
         return self.humans[self.n_turn/2]    
 
     def is_max(self):
+        '''
+        Returns True if the turn at the current state belongs to the AI
+        '''
         return self.n_turn < len(self.humans)*2
 
     def is_won(self):
+        '''
+        Returns True if the game is over
+        '''
         return len(self.zombies) <= 0 or len(self.humans) <= 0
     
     def evaluate(self):
+        '''
+        Calculate the value of the current game state
+        '''
         if len(self.zombies) == 0:
             self.value = float('inf')
             return self
@@ -265,12 +367,14 @@ class ZombieBoard(Minimax):
             self.value = float('-inf')
             return self
         
+        # Calculate the totals of some possible metrics
         bullets = sum(map(lambda x: x.bullets, self.humans))
         health = sum(map(lambda x: x.health, self.humans))
         ranged = sum(map(lambda x: x.ranged_attack, self.humans))
         melee = sum(map(lambda x: x.melee_attack, self.humans))
         zHealth = sum(map(lambda x: x.health, self.zombies))
         
+        # Calculate a score depending on the number of adjacent edges
         edge = 0
         for h in self.humans:
             for x,y in MOVES:
@@ -286,13 +390,22 @@ class ZombieBoard(Minimax):
         return self
     
     def bounds(self, x, y):
+        '''
+        Return True if (x, y) is a valid game tile
+        '''
         return x >= 0 and x < self.field.width and y >= 0 and y < self.field.height
     
     def passable(self, x, y):
+        '''
+        Return True if the square at (x, y) is passable
+        '''
         return self.field.passable(x, y) and (x, y) not in self.entities
     
     def search(self, x, y):
         '''
+        Simulate searching a square by adding the expected value of each
+        possible outcome to the related field of the Human doing the search
+        
         Chances of various effects:
         
         20% bullets (5-10)
@@ -324,6 +437,11 @@ class ZombieBoard(Minimax):
         
     
     def melee(self, aX, aY, dX, dY):
+        '''
+        Simulate an attack from (aX, aY) to (dX, dY).  The amount of damage done
+        is the expected value from a melee attack, which is the chance to hit
+        times the damage to deal.
+        '''
         # TODO: Ensure valid melee attacks
         
         attacker = self.entities[(aX, aY)]
@@ -334,6 +452,9 @@ class ZombieBoard(Minimax):
         self.action = ('melee', aX, aY, dX, dY)
     
     def shoot(self, aX, aY, dX, dY):
+        '''
+        Simulate a ranged attack from (aX, aY) to (dX, dY).
+        '''
         # TODO: Ensure valid ranged attacks
         attacker = self.entities[(aX, aY)]
         defender = self.entities[(dX, dY)]
@@ -348,11 +469,17 @@ class ZombieBoard(Minimax):
         self.action = ('shoot', aX, aY, dX, dY)
     
     def clear_bodies(self):
+        '''
+        Remove all dead entities from the various lists used to track them.
+        '''
         self.zombies = filter(lambda x: x.health > 0, self.zombies)
         self.humans = filter(lambda x: x.health > 0, self.humans)
         self.entities = dict(((e.x, e.y), e) for e in self.zombies + self.humans)
     
     def move(self, srcX, srcY, x, y):
+        '''
+        Move an entity from (srcX, srcY) to (x, y)
+        '''
         dX = abs(srcX - x)
         dY = abs(srcY - y)
         
@@ -374,8 +501,13 @@ class ZombieBoard(Minimax):
         self.action = ('move', srcX, srcY, x, y)
     
     def move_zombie(self, zombie):
+        '''
+        Simulate a zombie move according to the rules of the competition
+        '''
         if zombie.health <= 0:
             return
+        
+        # Find all alive humans within sqrt(range2) spaces 
         range2 = 5**2
         humans = filter(lambda x: x.health >= 0, self.humans)
         random.shuffle(humans)
@@ -383,13 +515,14 @@ class ZombieBoard(Minimax):
         closestHuman = None
         shortestDistance2 = self.field.width**2 + self.field.height**2
         for h in humans:
-            if self.field.can_see(zombie, h): # TODO: add adjacency test
+            if self.field.can_see(zombie, h): # TODO: add adjacency test (Zombies can melee an adjacent human regardless of LOS)
                 dx = zombie.x - h.x
                 dy = zombie.y - h.y
                 if dx**2 + dy**2 < shortestDistance2:
                     closestHuman = h
                     shortestDistance2 = dx**2 + dy**2
         
+        # Chase the closest human
         move = None
         if closestHuman and shortestDistance2 < range2:
             zX = zombie.x
@@ -411,7 +544,7 @@ class ZombieBoard(Minimax):
                 
                 if abs(mX) == abs(mY):
                     try:
-                        move = random.choice(possibles)[1]
+                        move = random.choice(possibles)[1] # TODO: Return all possible moves, and not a random one
                     except IndexError:
                         pass
                 elif len(possibles):
@@ -431,12 +564,21 @@ class ZombieBoard(Minimax):
         if move:
             if any(isinstance(x, tuple) for x in move):
                 raise Exception(move)
-            self.move(zombie.x, zombie.y, move[0], move[1])            
+            self.move(zombie.x, zombie.y, move[0], move[1])  
+          
     def itermoves(self):
+        '''
+        Generates all possible moves for a single human or all zombies
+        '''
         if self.is_max():
             myHuman = self.human()
             hX = myHuman.x
             hY = myHuman.y
+            
+            # For whatever reason, this particular ordering of search, shoot,
+            # melee, and move performs the best.  The ordering probably should
+            # not matter, so this hints at a bug somewhere.
+            
             # Do search
             if self.field.searchable(hX, hY):
                 new = self.turn()
@@ -481,6 +623,7 @@ class ZombieBoard(Minimax):
             nomove.action = ('wait',)
             yield nomove
         else:
+            # Calculate the zombie moves
             z = self.turn()
             for zombie in z.zombies:
                 z.move_zombie(zombie)
@@ -488,6 +631,9 @@ class ZombieBoard(Minimax):
             yield z
     
     def __str__(self):
+        '''
+        Make a nice pretty string version of the game board
+        '''
         ascii = self.field.ascii()
         for human in self.humans:
             ascii[human.y][human.x] = 'H'
@@ -498,6 +644,7 @@ class ZombieBoard(Minimax):
         return '\n'.join([' '.join(line) for line in ascii])
 
 if __name__ == '__main__':
+    # If we're running this file directly, put on a show!
     from time import sleep
     field = Field(10, 10)
     board = ZombieBoard(field)
