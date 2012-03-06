@@ -30,10 +30,10 @@ while(gameIsOn):
         if s=='GAME OVER':
             sys.stderr.write('Received game over signal from server\n')
             gameIsOn = False
-        
+
         elif s=='BEGIN BOARD':
             boardStr = s + '\n'
-        
+
         elif s=='END BOARD':
             board.loadParameters(boardStr)
             if player == None:

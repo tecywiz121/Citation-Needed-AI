@@ -13,5 +13,3 @@ one human versus five zombies. To use it:
 $ cd /path/to/repository/
 
 $ sh test.sh
-
-

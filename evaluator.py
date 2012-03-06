@@ -24,9 +24,9 @@ def evaluate(self):
         square = human.getSquare()
         row = square.GetRow()
         col = square.GetColumn()
-        
+
         totalValue = 0
-        
+
         # Stick to safe squares
         for dRow, dCol in ADJACENT:
             tRow = dRow + row
@@ -36,24 +36,24 @@ def evaluate(self):
             value = 0
             if not tSquare.isPassible():
                 value += 2
-            
+
             if not tSquare.blocksLOS():
                 value += 1
-            
+
             totalValue += value
-        
+
             # Avoid adjacent zombies
             for zombie in zombies:
                 zSquare = zombie.getSquare()
                 zRow = zSquare.getRow()
                 zCol = zSquare.getColumn()
-                
+
                 if zRow == tRow and zCol == tCol:
                     # TODO: Add non-adjacent zombies
                     totalValue -= 40
-                
+
     else:
         totalValue = float('-inf')
-    
-    
+
+
     return totalValue

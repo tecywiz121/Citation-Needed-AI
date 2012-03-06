@@ -20,32 +20,32 @@ class GameBoard:
     This class contains an array of squares, and tracks
     the positions of suvivors and zombies throughout the game
     """
-    
+
     _grid = []
     _entities = []
-    
+
     def __init__(self, width=0, height=0, numHumans=0, numZombies=0):
         """
         Create a new, empty board with a specific height and width
         """
-        
+
         # create the empty grid
         for y in range(height):
             self._grid.insert(y,[])
-            for x in range(width): 
+            for x in range(width):
                 passable = False
                 blocksLOS = False
                 searched = False
-            
+
                 self._grid[y].insert(x, GameSquare(x,y, passable,blocksLOS))
-                
+
         GameBoard._instance = self
-        
+
     def loadParameters(self, configStr):
         """
         Create a new game board based on another GameBoard's string representation
         """
-        
+
         lines = configStr.split('\n')
         for l in lines:
             l = l.strip().lower()
@@ -53,7 +53,7 @@ class GameBoard:
                 #print '#',l
                 tokens = l.split()
                 id = int(tokens[1])
-                
+
                 if tokens[0] == 'square':
                     GameSquare.allSquares[id].loadParameters(l)
                 elif tokens[0] == 'entity':
@@ -68,40 +68,40 @@ class GameBoard:
                         #sys.stderr.write(str(e)+'\n')
                     else:
                         entity.Entity.allEntities[id].loadParameters(l)
-                    
-                
-        
+
+
+
     def __str__(self):
         """
         Convert the board to a parsable string
         """
-        
+
         template = """BEGIN BOARD
 {1}
 {0}
 END BOARD"""
-        
+
         entities = ''
         for e in self._entities:
             entities = entities + str(e) + '\n'
-            
+
         squares = ''
         for row in self._grid:
             for cell in row:
                 squares = squares + str(cell) + '\n'
-                
+
         return template.format(squares,entities)
 
     def getWidth(self):
         return len(self._grid[0])
-    
+
     def getHeight(self):
         return len(self._grid)
-    
+
     def isAdjacent(self, src, target):
         dx = target.getColumn() - src.getColumn()
         dy = target.getRow() - src.getRow()
-        
+
         return abs(dx) <= 1 and abs(dy) <= 1
 
     # NOTE FOR JAVA/C++: talk to Chris about how this should be implemented
@@ -111,24 +111,24 @@ END BOARD"""
         """
         dx = dest.getColumn() - src.getColumn()
         dy = dest.getRow() - src.getRow()
-        
+
         # normalize dx and dy
         maxSteps = max(abs(dx),abs(dy))
         if maxSteps>0:
             dy = dy / maxSteps
             dx = dx / maxSteps
-        
+
         x = src.getColumn()
         y = src.getRow()
-        
+
         while(int(x) != dest.getColumn() or int(y) !=dest.getRow()):
             square = self._grid[int(y)][int(x)]
             if square.blocksLOS():
                 return False
-            
+
             x = x+dx
             y = y+dy
-            
+
         return True
 
     def getSquare(self, x, y):
@@ -157,7 +157,7 @@ END BOARD"""
                     ch = 'H'
                 else:
                     ch = 'Z'
-                    
+
                 print ch,
             print
 
@@ -166,11 +166,11 @@ END BOARD"""
         Return a list of all entities on a single team
         """
         entities = []
-        
+
         for e in self._entities:
             if e.getTeam() == team:
                 entities.insert(0,e)
-                
+
         if len(entities) == 0:
             return None
         else:
